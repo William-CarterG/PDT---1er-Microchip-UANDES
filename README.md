@@ -1,41 +1,31 @@
-![](../../workflows/gds/badge.svg) ![](../../workflows/docs/badge.svg) ![](../../workflows/test/badge.svg) ![](../../workflows/fpga/badge.svg)
+# First Microchip Design and Tapeout at Universidad de los Andes
 
-# Tiny Tapeout Verilog Project Template
+For my bachelor's degree project, I am designing (and taping out) the first microchip developed at Universidad de los Andes, Chile. The goal of this project is to promote and develop the electronics area within our Faculty of Engineering, creating new opportunities for future students and establishing a bridge between the Electrical Engineering and Computer Science specialties.
 
-- [Read the documentation for project](docs/info.md)
+## Project Structure
 
-## What is Tiny Tapeout?
+- **[Project](./project/)**: Contains all the project files to be hardened. More information is available in [this README file](./project/docs/info.md).
+- **[UART Transmission Components](./UART%20Transmission%20components/)**: Contains partial Verilog code that will enable bidirectional communication for the CPU.
+- **[CPU Module](./CPU%20Module/)**: Contains partial code for the CPU.
 
-Tiny Tapeout is an educational project that aims to make it easier and cheaper than ever to get your digital and analog designs manufactured on a real chip.
+## Work Plan
 
-To learn more and get started, visit https://tinytapeout.com.
+### Microchip Development
 
-## Set up your Verilog project
+1. **Iteration 1**: GDS for partial interface between the chip and Raspberry Pi.
+2. **Iteration 2**: GDS for full interface between the chip and Raspberry Pi.
+3. **Iteration 3**: GDS for CPU + communication interface.
 
-1. Add your Verilog files to the `src` folder.
-2. Edit the [info.yaml](info.yaml) and update information about your project, paying special attention to the `source_files` and `top_module` properties. If you are upgrading an existing Tiny Tapeout project, check out our [online info.yaml migration tool](https://tinytapeout.github.io/tt-yaml-upgrade-tool/).
-3. Edit [docs/info.md](docs/info.md) and add a description of your project.
-4. Adapt the testbench to your design. See [test/README.md](test/README.md) for more information.
+## Current Focus
 
-The GitHub action will automatically build the ASIC files using [OpenLane](https://www.zerotoasiccourse.com/terminology/openlane/).
+### Current Task: Debugging UART Transmitter
 
-## Enable GitHub actions to build the results page
+I am currently working on **Iteration 1**: Debugging the `.v` file of the UART transmitter to harden the project in the Tiny Tapeout environment.
 
-- [Enabling GitHub Pages](https://tinytapeout.com/faq/#my-github-action-is-failing-on-the-pages-part)
+## How to Contribute
 
-## Resources
+Read the documentation for guidance on how to work on the different components. To work on the UART transmission modules, refer to the documentation in [here](./project/docs/info.md).
 
-- [FAQ](https://tinytapeout.com/faq/)
-- [Digital design lessons](https://tinytapeout.com/digital_design/)
-- [Learn how semiconductors work](https://tinytapeout.com/siliwiz/)
-- [Join the community](https://tinytapeout.com/discord)
-- [Build your design locally](https://www.tinytapeout.com/guides/local-hardening/)
+Feel free to ask any questions!
 
-## What next?
-
-- [Submit your design to the next shuttle](https://app.tinytapeout.com/).
-- Edit [this README](README.md) and explain your design, how it works, and how to test it.
-- Share your project on your social network of choice:
-  - LinkedIn [#tinytapeout](https://www.linkedin.com/search/results/content/?keywords=%23tinytapeout) [@TinyTapeout](https://www.linkedin.com/company/100708654/)
-  - Mastodon [#tinytapeout](https://chaos.social/tags/tinytapeout) [@matthewvenn](https://chaos.social/@matthewvenn)
-  - X (formerly Twitter) [#tinytapeout](https://twitter.com/hashtag/tinytapeout) [@tinytapeout](https://twitter.com/tinytapeout)
+Pro tip: adding [skip-ci] to your commits should avoid running the github actions workflow.
