@@ -24,9 +24,7 @@ To test the project, follow these steps:
 
 2. **Harden Locally:** Harden your project locally by following the instructions provided in the subsequent sections.
 
-3. **Prepare for Tapeout:** After verifying the functionality and hardening the design, create a repository based on the [Tiny Tapeout Verilog template](https://github.com/TinyTapeout/tt10-verilog-template/tree/main). Configure the project to match this template.
-
-4. **Run GitHub Actions:** Push your changes to the repository and execute the GitHub Actions workflow. If it completes successfully, your files are ready for tapeout!
+3. **Run GitHub Actions:** Push your changes to the repository and execute the GitHub Actions workflow. If it completes successfully, your files are ready for tapeout!
 
 
 ## Setup Instructions for Tiny Tapeout Environment
@@ -36,10 +34,6 @@ Github actions run after every commit to harden the project automatically. Howev
 ### Local Hardening
 
 We are using a different version of the PDK and OpenLane, so you’ll need to install them. This will require about **2.5GB of space**.
-
----
-
-#### Setting Up the Environment
 
 We need  to set up the correct environment variables. Enter the `setup_env.sh`file and modify the `install_dir` variable to the path of the directory where you want to install the enviroment (usually where you will be running your project from).
 
