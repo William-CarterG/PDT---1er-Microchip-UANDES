@@ -16,28 +16,24 @@ The main UART module, instantiated as `uut`, takes inputs like `clk`, `reset`, `
 
 A key feature is the `send_instruction` task, which simulates the transmission of a **15-bit instruction** through the `rx` line. This involves sending a start bit (low), 15 data bits (LSB first), and a stop bit (high). Each bit period corresponds to 8680 ns, emulating a baud rate of **115200 bps**.
 
-Following the instruction transmission, the testbench waits for the `instruction_ready` signal, indicating that the UART module has processed the data. The module then transmits the **8 least significant bits** of the received instruction via the `tx` line, initiated by a brief `start_transmit` signal.
-
-A simple UART receiver module (`uart_receiver`) monitors the `tx` line to validate the transmitted data. It captures bits and logs them, ensuring the UART module's behavior aligns with expectations.
-
-This testbench provides a partially complete UART communication simulation, verifying start/stop bit handling, data timing, and responsiveness at 115200 bps, while laying the groundwork for achieving bidirectional communication in future designs.
-
+## How to test
 
 To test the project, follow these steps:
 
-1. **Simulate on EDA Playground:** Ensure the code runs correctly in an EDA Playground environment, using the provided testbench to verify functionality.
+1. **Simulate on EDA Playground:** Ensure the code runs correctly in an [EDA Playground](edaplayground.com) environment, using the provided testbench to verify functionality.
 
 2. **Harden Locally:** Harden your project locally by following the instructions provided in the subsequent sections.
 
 3. **Prepare for Tapeout:** After verifying the functionality and hardening the design, create a repository based on the [Tiny Tapeout Verilog template](https://github.com/TinyTapeout/tt10-verilog-template/tree/main). Configure the project to match this template.
 
 4. **Run GitHub Actions:** Push your changes to the repository and execute the GitHub Actions workflow. If it completes successfully, your files are ready for tapeout!
-```
+
+
 ## Setup Instructions for Tiny Tapeout Environment
+Github actions run after every commit to harden the project automatically. However, even though it's useful to have the GitHub action doing the work for us, it also make things take a bit longer if we're iterating a lot. You might want to harden your design locally.
+
 
 ### Local Hardening
-
-It's useful to have the GitHub action doing the work for us, but it does make things take a bit longer if we're iterating a lot. You might want to harden your design locally.
 
 We are using a different version of the PDK and OpenLane, so you’ll need to install them. This will require about **2.5GB of space**.
 
@@ -105,6 +101,8 @@ cd $OPENLANE_ROOT
 
 make
 ```
+
+Alternatively, you can follow [this guide](https://www.tinytapeout.com/guides/local-hardening/).
 
 ## Harden Your Project
 
