@@ -18,9 +18,9 @@ For my bachelor's degree project, I am designing (and taping out) the first micr
 
 ## Current Focus
 
-### Current Task: Debugging UART Transmitter
+### Current Task: Full Adder
 
-I am currently working on **Iteration 1**: Debugging the `.v` file of the UART transmitter to harden the project in the Tiny Tapeout environment.
+Given the technical complexity of the tools being utilized, we have opted to simplify our approach by starting with more basic components and progressively scaling up. As a next step, we aim to synthesize a simple full adder. This will allow us to gain practical experience with the tools and establish a stronger foundation for subsequent, more complex designs.
 
 ## How to Contribute
 
